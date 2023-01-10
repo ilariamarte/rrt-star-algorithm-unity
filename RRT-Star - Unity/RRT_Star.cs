@@ -80,17 +80,17 @@ public class RRT_Star : MonoBehaviour {
 		// Press key - get obstacle center
 		if (e.type == EventType.KeyDown && e.keyCode == KeyCode.Z && muxClick) {
 			(posObs[numOfObs,0], posObs[numOfObs,1]) = (xMouse, yMouse);
+			numOfObs++;
 			muxClick = false;
 		}
 		// Keep key pressed - get obstacle radius
 		if (e.type == EventType.KeyDown && e.keyCode == KeyCode.Z && !muxClick) {
-			(centerObs[0], centerObs[1]) = (posObs[numOfObs,0], posObs[numOfObs,1]);
+			(centerObs[0], centerObs[1]) = (posObs[numOfObs-1,0], posObs[numOfObs-1,1]);
 			(currPos[0], currPos[1]) = (xMouse, yMouse);
-			radObs[numOfObs] = GetDistance(centerObs, currPos);
+			radObs[numOfObs-1] = GetDistance(centerObs, currPos);
 		}
 		// Release key - prepare for next obstacle
 		if (e.type == EventType.KeyUp && e.keyCode == KeyCode.Z && !muxClick) {
-			numOfObs++;
 			muxClick = true;
 		}
 		// Click to place the starting node
