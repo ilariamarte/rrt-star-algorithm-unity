@@ -1,6 +1,7 @@
 # RRT-Star-algorithm-Unity
 2D routing and path planning RRT* algorithm (Unity)  
 
+Incremental sampling & searching algorithm series  
 The RRT* algorithm progressively covers the area in a net of nodes, and dinamically improves and rewires edges to always find the shortest paths  
 This Unity version is considerably faster than its Python counterpart (as C# is a compiled language rather than interpreted)  
 
